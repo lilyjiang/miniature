@@ -38,7 +38,6 @@ var RemindMeBox = React.createClass({
   render: function() {
     return (
       <div className="RemindMeBox">
-        <h1>RemindMe</h1>
         <RemindMeList data={this.state.data} />
         <RemindMeForm onRemindMeSubmit={this.handleRemindMeSubmit} />
       </div>
@@ -84,7 +83,20 @@ var RemindMeForm = React.createClass({
 			<form className="commentForm" onSubmit={this.handleSubmit}>
 		        <input type="text" placeholder="Your content" ref="content" />
 		        <input type="text" placeholder="Date..." ref="date" />
-		        <input type="submit" value="Post" />
+            <select>
+              <option value="once">一次性事件</option>
+              <option value="cycle">循环</option>
+            </select>
+            <select>
+              <option value="0">选择周期</option>
+              <option value="2">1周</option>
+              <option value="3">1个月</option>
+              <option value="4">6个月</option>
+              <option value="5">1年</option>
+              <option value="6">2年</option>
+              <option value="7">3年</option>
+            </select>
+		        <input type="submit" value="确定" />
 		    </form>
 		);
 	}
